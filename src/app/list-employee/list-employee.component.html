@@ -1,0 +1,51 @@
+<div class="main-content">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Salary</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of displayedEmployees">
+        <td>{{ employee.id }}</td>
+        <td>
+          <input
+            type="text"
+            [(ngModel)]="employee.employee_name"
+            [disabled]="!isEditingEmployee(employee.id)"
+          />
+        </td>
+        <td>
+          <input
+            type="number"
+            [(ngModel)]="employee.employee_age"
+            [disabled]="!isEditingEmployee(employee.id)"
+          />
+        </td>
+        <td>
+          <input
+            type="number"
+            [(ngModel)]="employee.employee_salary"
+            [disabled]="!isEditingEmployee(employee.id)"
+          />
+        </td>
+        <td>
+          <button (click)="toggleEditing(employee.id)">Edit</button>
+          <button
+            (click)="updateEmployee(employee)"
+            [disabled]="!isEditingEmployee(employee.id)"
+          >
+            Save
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls
+    (pageChange)="onPageChange($event)"
+  ></pagination-controls>
+</div>

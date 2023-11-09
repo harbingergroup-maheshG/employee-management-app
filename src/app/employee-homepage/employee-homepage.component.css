@@ -1,0 +1,45 @@
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar nav ul li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .router-link-active {
+    background-color: #555;
+    border-radius: 5px;
+  }
